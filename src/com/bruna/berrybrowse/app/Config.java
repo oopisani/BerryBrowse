@@ -52,7 +52,7 @@ public class Config {
         String texto = (
                 "=========================================================================\n" +
                         "            BEM-VINDO À ÁREA DE CONFIGURAÇÃO DO BERRYBROWSE!             \n" +
-                        "                                 V1.0.0                                 \n" +
+                        "                                V0.1.0                                \n" +
                         "=========================================================================\n"
         );
         System.out.println(texto);
