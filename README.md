@@ -90,8 +90,6 @@
   </tr>
 </table>
 
-  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-
 ## Próximas Implementações
 <p>🫐 Berry Moods: perfis de automação (ex: Trabalho, Estudo, Lazer)</p>
 <p>🫐 Migração para SQLite para melhor estrutura de dados</p>
