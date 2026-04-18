@@ -23,10 +23,10 @@
 
 ## Funcionalidades
 
+* **Verificação de Inicialização do Sistema:** O BerryBrowse verifica o estado de prontidão do Windows antes da execução, checando a inicialização do sistema (ex: disponibilidade do processo `explorer.exe`) e aplicando um pequeno tempo de estabilização. Isso garante execução segura durante a inicialização da sessão do usuário.
 * **Execução Portátil:** O programa é standalone e contém todas as dependências necessárias para execução nativa, sem necessidade de instalação do JDK/JRE na máquina do usuário.
 * **Background Execution:** O BerryBrowse cria automaticamente uma tarefa no Agendador de Tarefas do Windows durante a configuração inicial, garantindo sua execução automática no logon do sistema de forma autônoma.
-* **Persistência de Links:** Processamento (limpeza), armazenamento e leitura de URLs em arquivo de texto simples (.txt), utilizando o modelo Flat-File Database.</i></p>
-
+* **Persistência de Links:** Processamento (limpeza), armazenamento e leitura de URLs em arquivo de texto simples (.txt), utilizando o modelo Flat-File Database.
 
 ## Requisitos
 * **Sistema Operacional:** Windows 10 ou Windows 11 (O funcionamento via Agendador de Tarefas foi homologado e testado nessas versões).
@@ -53,41 +53,44 @@
 
 
 ## Instalação
-1. Baixe a versão mais recente na aba do [repositório](https://github.com/SEU_USUARIO/SEU_REPO/releases/latest).
+1º. Baixe a versão mais recente na aba do [repositório](https://github.com/SEU_USUARIO/SEU_REPO/releases/latest).
 
-2. Como o BerryBrowse é um executável independente (sem assinatura digital paga), o Windows Defender ou seu antivírus pode emitir um alerta. Clique em "Manter" ou "Executar assim mesmo" com segurança.
+2º. Como o BerryBrowse é um executável independente (sem assinatura digital paga), o Windows Defender ou seu antivírus pode emitir um alerta. Clique em "Manter" ou "Executar assim mesmo" com segurança.
 
-3. Extraia o arquivo .zip baixado. Você verá duas pastas internas:
+3º. Extraia o arquivo .zip baixado. Você verá duas pastas internas:
 
 <p align="center">
   <img src="assets/Instrucao_1.png" alt="Instrução 1" width="300"/>
 </p>
 
-4. Crie uma pasta chamada `BerryBrowse` no local do seu PC onde desejar manter o programa e mova as pastas extraídas para dentro dela.
+4º. Crie uma pasta chamada `BerryBrowse` no local do seu PC onde desejar manter o programa e mova as pastas extraídas para dentro dela.
 
 > [!CAUTION]
 > **A pasta principal "BerryBrowse" pode ser movida livremente, mas a estrutura interna de arquivos e pastas do BerryConfig e BerryLauncher não deve ser alterada.**
 
 ## Configuração inicial
 
-1. Execute o arquivo `BerryConfig.exe` na primeira utilização do sistema.
+1º. Execute o arquivo `BerryConfig.exe` na primeira utilização do sistema.
 > [!WARNING]
 > **BerryConfig deve ser executado via Prompt de Comando (CMD) ou terminal com permissões de administrador.**
 
-2. Após a execução, abra o **Agendador de Tarefas do Windows** e verifique se a tarefa `BerryAutoStart` foi criada corretamente.
+2º. Após a execução, abra o **Agendador de Tarefas do Windows** e verifique se a tarefa `BerryAutoStart` foi criada corretamente.
 
 <p align="center">
   <img src="assets/Instrucao_2.png" alt="Instrução 1" width="300"/>
 </p>
 
-3. Confirmado a criação da tarefa, reinicie o computador para validar o funcionamento do BerryBrowse.
+3º. Confirmado a criação da tarefa, reinicie o computador para validar o funcionamento do BerryBrowse.
 
-## Possíveis Ajustes
-Em alguns cenários, o BerryBrowse pode ser executado muito rapidamente durante a inicialização do Windows, antes que processos essenciais como `explorer.exe` e outros serviços do sistema estejam totalmente carregados. Isso pode afetar temporariamente sessões autenticadas que dependem da inicialização completa do sistema.
+## Menu interativo
+<table>
+  <tr>
+    <td><img src="assets/CLI_1.png" width="500"/></td>
+    <td><img src="assets/CLI_2.png" width="500"/></td>
+  </tr>
+</table>
 
-Nesses casos, recomenda-se configurar um pequeno atraso na tarefa de inicialização. Um delay de aproximadamente 30 segundos costuma ser suficiente na maioria dos ambientes.
-
-<p align="center"> <img src="assets/Instrucao_3.png" alt="Instruction - Task Scheduler Delay" width="300"/> </p>
+ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 ## Próximas Implementações
 <p>🫐 Berry Moods: perfis de automação (ex: Trabalho, Estudo, Lazer)</p>
