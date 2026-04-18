@@ -34,7 +34,8 @@
 * **Armazenamento (Recomendado):**  SSD.
 
 > [!NOTE]
-> O BerryBrowse é leve. No entanto, como a automação é engatilhada no momento do logon do Windows, computadores com inicialização muito lenta (como os que utilizam HDDs antigos) podem atrasar o acionamento da ferramenta devido aos gargalos naturais do sistema operacional nesses cenários.
+> O BerryBrowse executa no logon do Windows, portanto seu comportamento pode variar conforme o estado do sistema na inicialização.
+Em cenários de maior carga no startup (como gravação de tela), o desempenho do sistema pode afetar o tempo de inicialização de aplicações abertas nesse momento, podendo exigir revalidação de sessão no navegador em alguns casos.
 
 
 ## Links não permitidos
@@ -91,12 +92,14 @@
 </table>
 
 ## Próximas Implementações
-<p>🫐 Berry Moods: perfis de automação (ex: Trabalho, Estudo, Lazer)</p>
+<p>🫐 <strong>Berry Moods:</strong> perfis de automação (ex: Trabalho, Estudo, Lazer)</p>
 <p>🫐 Migração para SQLite para melhor estrutura de dados</p>
 <p>🫐 Interface gráfica com JavaFX</p>
 <p>🫐 Suporte expandido para Linux</p>
 <p>🫐 Logs de execução e monitoramento de automações</p>
 <p>🫐 Sistema de backup e restauração de configurações</p>
+<p>🫐 <strong>Melhoria do mecanismo de inicialização do sistema:</strong> Implementação de um controle mais robusto de prontidão do sistema no startup, reduzindo a sensibilidade a variações de desempenho (ex: carga do sistema, gravação de tela e inicialização de serviços pesados), garantindo maior estabilidade na execução das automações.</p>
+
   
 
 
