@@ -19,8 +19,11 @@ public class AutoStart {
 
     public static void main(String[] args) throws Exception {
 
+        StartupReadiness.waitSystemReady();
+
         Set<String> list = new LinkedHashSet<>();
         LinkService service = new LinkService(list, new LinkValidator(), new LinkConverter(), new LinkFileRepository());
+
        // Lê se links.txt já existe
         list.addAll(service.readLinks());
 
