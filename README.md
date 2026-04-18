@@ -4,39 +4,56 @@
 </p>
 
 <p align="center">
-  Launcher de automação em Java que prepara seu ambiente de trabalho abrindo links automaticamente no logon do PC.
+  Launcher de automação em Java que prepara o ambiente de trabalho do usuário abrindo links automaticamente no logon do sistema.
 </p>
 
 <p align="center">
- <i>Because sometimes you just need a <strong>berry</strong> fresh start.</i>
+ <i>Because sometimes.. you just need a <strong>berry</strong> fresh start!</i>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-24-blue" />
+  <img src="https://img.shields.io/badge/OS-Windows-lightgrey" />
+  <img src="https://img.shields.io/badge/Interface-CLI-black" />
+  <img src="https://img.shields.io/badge/status-pre--release-orange" />
 </p>
 
 ## Sobre
-O BerryBrowse tem como foco automatizar a abertura de links no navegador padrão do usuário. Toda a operação é feita via terminal (CLI) e executada de forma autônoma. O projeto foi arquitetado de forma modular, com responsabilidades separadas em pacotes que cuidam de estruturas específicas.
-<p>Além do armazenamento leve de dados direto no disco, o BerryBrowse utiliza o Agendador de Tarefas do Windows para automatizar sua execução no logon do sistema, permitindo a abertura automática de links no início da sessão.</p>
+<p>O BerryBrowse tem como foco automatizar a abertura de links no navegador padrão do usuário. Toda a operação é feita via terminal (CLI) e executada de forma autônoma. O projeto é modular, com responsabilidades separadas em packages que organizam as funcionalidades internas.</p>
 
 ## Funcionalidades
 
-* Execução Portátil: O programa é standalone e contém todas as dependências necessárias para execução nativa, sem necessidade de instalação do JDK/JRE na máquina do usuário.
+* **Execução Portátil:** O programa é standalone e contém todas as dependências necessárias para execução nativa, sem necessidade de instalação do JDK/JRE na máquina do usuário.
+* **Background Execution:** O BerryBrowse cria automaticamente uma tarefa no Agendador de Tarefas do Windows durante a configuração inicial, garantindo sua execução automática no logon do sistema de forma autônoma.
+* **Persistência de Links:** Processamento (limpeza), armazenamento e leitura de URLs em arquivo de texto simples (.txt), utilizando o modelo Flat-File Database.</i></p>
 
-* Execução em segundo plano: O BerryBrowse é iniciado automaticamente no logon do sistema via Agendador de Tarefas do Windows, executando sua lógica de forma autônoma.
 
-* Persistência de Links: Armazenamento e leitura de URLs através de um arquivo de texto simples (.txt), utilizando o modelo de <i>Flat-File Database</i>.</p>
-  
 ## Requisitos
 * **Sistema Operacional:** Windows 10 ou Windows 11 (O funcionamento via Agendador de Tarefas foi homologado e testado nessas versões).
 
 * **Armazenamento (Recomendado):**  SSD.
 
-* **Nota sobre performance:** O BerryBrowse é leve. No entanto, como a automação é engatilhada no momento do logon do Windows, computadores com inicialização muito lenta (como os que utilizam HDDs antigos) podem atrasar o acionamento da ferramenta devido aos gargalos naturais do sistema operacional nesses cenários. 
+> [!NOTE]
+> O BerryBrowse é leve. No entanto, como a automação é engatilhada no momento do logon do Windows, computadores com inicialização muito lenta (como os que utilizam HDDs antigos) podem atrasar o acionamento da ferramenta devido aos gargalos naturais do sistema operacional nesses cenários.
+
 
 ## Links não permitidos
-**Hosts vazios** •
-**Hosts númericos** •
-**Schemes diferentes de http/https** 
+
+**- Hosts vazios**               
+**- Hosts numéricos (IPs)**                                                    <img align="right" src="assets/icone.ico" width="250"/>   
+**- Schemes diferentes de `http/https`**                                              
+**- Links vazios são ignorados**  
+**- Links repetidos são contabilizados apenas uma vez**
+
+| ✔ Aceitos | ❌ Rejeitados |
+|----------|--------------|
+| https://www.google.com | 8.8.8.8 |
+| https://www.udemy.com/ | udemy.com |
+
+
 
 ## Instalação
-1. Baixe a versão mais recente na aba de Releases do repositório.
+1. Baixe a versão mais recente na aba do [repositório](https://github.com/SEU_USUARIO/SEU_REPO/releases/latest).
 
 2. Como o BerryBrowse é um executável independente (sem assinatura digital paga), o Windows Defender ou seu antivírus pode emitir um alerta. Clique em "Manter" ou "Executar assim mesmo" com segurança.
 
@@ -46,37 +63,31 @@ O BerryBrowse tem como foco automatizar a abertura de links no navegador padrão
   <img src="assets/Instrucao_1.png" alt="Instrução 1" width="300"/>
 </p>
 
-4. Crie uma pasta chamada BerryBrowse no local do seu PC onde desejar manter o programa e mova as pastas extraídas para dentro dela.
-
-> [!WARNING]
-> Não altere o nome de nenhum arquivo e nem troque de lugar, isso irá quebrar o programa.
-   
-## Configurações Necessárias
-
-1. Você deverá rodar o executável BerryConfig.exe pela primeira vez.
+4. Crie uma pasta chamada `BerryBrowse` no local do seu PC onde desejar manter o programa e mova as pastas extraídas para dentro dela.
 
 > [!CAUTION]
-> O BerryConfig deve ser rodado no terminal ou CMD com níveis de ADMINISTRADOR somente.
+> **A pasta principal "BerryBrowse" pode ser movida livremente, mas a estrutura interna de arquivos e pastas do BerryConfig e BerryLauncher não deve ser alterada.**
 
- 2. Após configurado pelo terminal, abra o Agendador de Tarefas do Windows e cheque se a tarefa "BerryAutoStart" foi criada. Deverá estar assim:
+## Configuração inicial
+
+1. Execute o arquivo `BerryConfig.exe` na primeira utilização do sistema.
+> [!WARNING]
+> **BerryConfig deve ser executado via Prompt de Comando (CMD) ou terminal com permissões de administrador.**
+
+2. Após a execução, abra o **Agendador de Tarefas do Windows** e verifique se a tarefa `BerryAutoStart` foi criada corretamente.
 
 <p align="center">
-  <img src="assets/Instrucao_2.png" alt="Instrução 2" width="300"/>
+  <img src="assets/Instrucao_2.png" alt="Instrução 1" width="300"/>
 </p>
 
-3. Agora você pode reiniciar o PC e ver se funcionou.
-
-> Nota: É normal que, ao iniciar, abra uma caixinha do CMD e não tenha nenhum aviso. É apenas o programa pensando.
+3. Confirmado a criação da tarefa, reinicie o computador para validar o funcionamento do BerryBrowse.
 
 ## Possíveis Ajustes
+Em alguns cenários, o BerryBrowse pode ser executado muito rapidamente durante a inicialização do Windows, antes que processos essenciais como `explorer.exe` e outros serviços do sistema estejam totalmente carregados. Isso pode afetar temporariamente sessões autenticadas que dependem da inicialização completa do sistema.
 
-<p>Se, por algum motivo, houver atraso na inicialização do BerryBrowse ou impacto no desempenho do sistema, recomenda-se ajustar as configurações diretamente no Agendador de Tarefas do Windows.</p>
+Nesses casos, recomenda-se configurar um pequeno atraso na tarefa de inicialização. Um delay de aproximadamente 30 segundos costuma ser suficiente na maioria dos ambientes.
 
-<ol>
-  <li>Para alterar o momento de inicialização, clique com o botão direito em <b>BerryAutoStart</b> → <b>Propriedades</b> → <b>Disparadores</b> → <b>Editar</b>.</li>
-
-  <li>Verifique se a opção <i>"Interromper a tarefa se ela for executada por mais de 3 dias"</i> está desmarcada em <b>Propriedades → Configurações</b> da tarefa <b>BerryAutoStart</b>.</li>
-</ol>
+<p align="center"> <img src="assets/Instrucao_3.png" alt="Instruction - Task Scheduler Delay" width="300"/> </p>
 
 ## Próximas Implementações
 <p>🫐 Berry Moods: perfis de automação (ex: Trabalho, Estudo, Lazer)</p>
